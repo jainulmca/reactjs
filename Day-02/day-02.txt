@@ -1,0 +1,191 @@
+****************************************************************************************
+========================================================================================
+CHAPTER 01 - Igniting our App
+========================================================================================
+****************************************************************************************
+
+Q.1 - What is `NPM`?
+---------------------------------------------------------------------------------------
+Ans. NPM is a package manager, but it's full form is not "node package manager". npm is the world's largest software registry. Open source developers from every continent use npm to share and borrow packages, and many organizations use npm to manage private development as well.
+
+Use the website to discover packages, set up profiles, and manage other aspects of your npm experience. For example, you can set up organizations to manage access to public or private packages.
+
+The CLI runs from a terminal, and is how most developers interact with npm.
+
+The registry is a large public database of JavaScript software and the meta-information surrounding it.
+
+Q.2 - What is `Parcel/Webpack`? Why do we need it?
+---------------------------------------------------------------------------------------
+`Parcel/Webpack` is a bundler. That makes our code lightweight and production ready.
+- A build tool for the rest of us.
+- It's lightning fast.
+- Automatic production optimization.
+- Ship for any target.
+- Scalable from small websites to massive applications.
+- Powered by open source.
+
+
+Q.3 - What is `.parcel-cache`
+---------------------------------------------------------------------------------------
+Parcel caches everything it builds to disk. If you restart the dev server, Parcel will only rebuild files that have changed since the last time it ran. Parcel automatically tracks all of the files, configuration, plugins, and dev dependencies that are involved in your build, and granularly invalidates the cache when something changes. For example, if you change a configuration file, all of the source files that rely on that configuration will be rebuilt.
+
+By default, the cache is stored in the .parcel-cache folder inside your project. You should add this folder to your .gitignore (or equivalent) so that it is not committed in your repo. You can also override the location of the cache using the --cache-dir CLI option.
+
+Caching can also be disabled using the --no-cache flag. Note that this only disables reading from the cache – a .parcel-cache folder will still be created.
+
+Q.4 - What is `npx` ?
+---------------------------------------------------------------------------------------
+ The npx stands for Node Package Execute and it comes with the npm, when you installed npm then automatically npx will installed. It is an npm package runner that can execute any package that you want from the npm registry without even installing that package
+
+Q.5 - What is difference between `dependencies` vs `devDependencies`
+---------------------------------------------------------------------------------------
+"dependencies" : Packages required by your application in production. 
+"devDependencies" : Packages that are only needed for local development and testing.
+
+Q.6 - What is Tree Shaking?
+---------------------------------------------------------------------------------------
+In production builds, Parcel statically analyzes the imports and exports of each module, and removes everything that isn't used. This is called "tree shaking" or "dead code elimination".
+
+Q.7 - What is Hot Module Replacement?
+---------------------------------------------------------------------------------------
+Hot Module Replacement (HMR) exchanges, adds, or removes modules while an application is running, without a full reload. This can significantly speed up development in a few ways: Retain application state which is lost during a full reload.
+
+As you make changes to your code, Parcel automatically rebuilds the changed files and updates your app in the browser. By default, Parcel fully reloads the page, but in some cases it may perform Hot Module Replacement (HMR). HMR improves the development experience by updating modules in the browser at runtime without needing a whole page refresh. This means that application state can be retained as you change small things in your code.
+
+CSS changes are automatically applied via HMR with no page reload necessary. This is also true when using a framework with HMR support built in, like React (via Fast Refresh), and Vue.
+
+Q.8 - List down your favourite 5 superpowers of Parcel and describe any 3 of them in your
+own words.
+---------------------------------------------------------------------------------------
+My favourite superpowers of Parcel is given as below:
+- HMR(Hot Module Replacement)
+- Caching while development
+- Compression
+- Compitable with older version of browser
+- Content Hashing
+- Zero config
+- Transitive Dependencies
+- Tree shaking
+- Image optimization
+- Superfast build algorithm
+- Dev & Production Build
+- Cleaning our code
+- Minification
+- Bundling
+- File watcher algorithm - C++
+
+Q.9 - What is `.gitignore`? What should we add and not add into it?
+---------------------------------------------------------------------------------------
+The .gitignore file is a text file that tells Git which files or folders to ignore in a project.
+
+Files you should add in '.gitignore':
+- Log files
+- Files with API keys/secrets, credentials, or sensitive information
+- Useless system files like
+- Generated files like dist folders
+- Dependencies which can be downloaded from a package manager
+
+Q.10 - What is the difference between `package.json` and `package-lock.json`
+---------------------------------------------------------------------------------------
+The “package.json” file defines the rules required to run your application and install dependencies. On the other hand, the “package-lock.json” file holds detailed information on all the dependencies installed based on the package.json rules.
+After npm init command run we will get package.json files.
+After npm install we will get package.json.lock file. It locks the excat version of any dependency required by your application.
+
+
+Q.11 - Why should I not modify `package-lock.json`?
+---------------------------------------------------------------------------------------
+It generated based on package.json file and it locks the version of packages. If you modify this file then changes is overridden after npm install as per package.json file
+
+
+Q.12 - What is `node_modules`? Is it a good idea to push that on git?
+---------------------------------------------------------------------------------------
+When we download any library with npm, the library goes to folder node_modules. When we are going to upload it (to GitHub, for example) we have to ignore the node_modules folder, because it takes a lot of space. Through file package.json we can download all dependencies using npm i.
+
+
+Q.13 - What is the `dist` folder?
+---------------------------------------------------------------------------------------
+The code present in the /dist folder is actually the code which is used on production web applications.
+- The /dist stands for distributable.
+- The /dist folder contains the minimized version of the source code.
+- The code present in the /dist folder is actually the code which is used on production web applications.
+- Along with the minified code, the /dist folder also comprises of all the compiled modules that may or may not be used 
+  with other systems.
+- It is easier to add files to the /dist folder as it is an automatic process. All the files are automatically copied   
+  to the dist folder on save.
+
+Ideally, it is considered a good practice to clean the /dist folder before each build.
+
+Q.14 - What is `browserlists`?
+---------------------------------------------------------------------------------------
+Browserslist is a tool that allows specifying which browsers should be supported in your frontend app by specifying "queries" in a config file. It's used by frameworks/libraries such as React, Angular and Vue, but it's not limited to them.
+Developers set their version lists using queries like last 2 versions to be free from updating versions manually. Browserslist will use caniuse-lite with "Can I Use data" for this queries.
+In package.json file we will configure it. (https://browserslist.dev/)
+"browserslist": [
+    "last 2 versions",
+    "> 1%",
+    "not dead"
+  ]
+
+Q.15 - Read about different bundlers: vite, webpack, parcel
+---------------------------------------------------------------------------------------
+
+Q.16 - Read about: ^ - caret and ~ - tilda
+---------------------------------------------------------------------------------------
+In package.json we have this before version number.
+^ - caret - Automatically upgrade for minor version.
+~ - tilda - It means specific version and won't be upgraded.
+
+
+
+Lab Questions:
+--------------------------------------------------------------------------------------
+In your existing project
+● - intialize `npm` into your repo
+	npm init
+
+● - install `react` and `react-dom`
+npm install react
+npm i react-dom
+
+● - remove CDN links of react
+● - install parcel
+npm i -D parcel/npm i --save-dave  parcel
+
+● - ignite your app with parcel
+	npx parcel index.html (in package.json delete "main": "index.js")
+	Warning: You are importing createRoot from "react-dom" which is not supported. You should instead import it from "react-dom/client".
+	import React from "react";
+	import ReactDOM from "react-dom/client";
+
+	npx parcel build index.html - to build our code/bundle our code, minify our code
+
+● - add scripts for “start” and “build” with parcel commands
+    "scripts": {
+	"start": "parcel index.html",
+      "build": "parcel build index.html",
+	"test": "jest"
+	}
+
+	cmd> npm run start /npm run is same as npx to execute npm command
+	cmd> npm run build
+
+● - add `.gitignore` file
+     gitignore.io - and generate react related code
+     create new file '.gitignore' put these ignore realted code
+	
+    We should put .parcel-cache in git ignore
+    Anything that is auto generated we will put into '.gitignore'. Anything which we generate on server will put on '.gitignore'.
+   in '.gitignore' file put - .parcel-cache
+    
+
+● - add `browserlists`
+    Parcel by default browserlists package. you can use it in package.json
+    "browserlist": [
+      "last 2 versions", (last 2 Chrome versions/cover 99.5%)
+     ]
+	
+	https://browsersl.ist/#q=defaults, https://browserslist.dev/?q=bGFzdCAyIHZlcnNpb25z
+
+● - build a production version of your code using `parcel build`
+    npx parcel build index.html - to build our code/bundle our code, minify our code
+

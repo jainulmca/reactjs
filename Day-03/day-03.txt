@@ -1,0 +1,51 @@
+****************************************************************************************
+========================================================================================
+CHAPTER 03 - Igniting our App
+========================================================================================
+****************************************************************************************
+
+Q.1 - What is JSX?
+---------------------------------------------------------------------------------------
+Ans. Update big HTML in javascript.
+- HTML inside JavaScript - wrong.
+It's JS with fancy way:
+const heading = (
+	<h1 id="title" key="h1"> Namaestae JavaScript</h1>
+);
+key ="h1" - React keeps track html element using key
+Babel exactly knows () angular bracket - its JSX expression
+JSX uses React.CreateElement() behind the scene. Babel convert JSX to React.CreateElement() code.
+
+"Javascript XML" is a syntax extension of Javascript. Using JSX, you can write markup inside Javascript, providing you with a superpower to write logic and markup of a component inside a single .jsx file.
+
+Q.2 - Superpowers of JSX?
+---------------------------------------------------------------------------------------
+Ans. Readability, Maintainability.
+Using JSX, you can write markup inside Javascript, providing you with a superpower to write logic and markup of a component inside a single .jsx file.
+
+
+Q.2 - Role of "type" attribute in script tag? What options can I use there?
+---------------------------------------------------------------------------------------
+Ans. The <script> HTML element is used to embed executable code or data; this is typically used to embed or refer to JavaScript code. This element includes (async, crossorigin, defer, fetchpriority, integrity, nomodule, nonce, src, type)
+
+"type" attribute indicates the type of script represented. Attribute is not set (default), an empty string, or a JavaScript MIME type. The value of this attribute will be one of the following:
+module, importmap
+
+Q.2 - {TitleComponent} vs <TitleComponent/> vs {<TitleComponent></TitleComponent>} in JSX?
+---------------------------------------------------------------------------------------
+Ans. {TitleComponent} - We can call jsx component as well as core js code here.
+<TitleComponent/> - Calling jsx component. In this case we can pass props here.
+{<TitleComponent></TitleComponent>} - You can provide more JSX elements as the children. This is useful for displaying nested components.
+
+
+
+References
+===========================================================================================
+Babel: https://babeljs.io/
+Attribute Type: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/script#attr-type
+JS Modules: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Modules
+Babel Playground: https://babeljs.io/repl#
+React without JSX: https://reactjs.org/docs/react-without-jsx.html
+
+
+
